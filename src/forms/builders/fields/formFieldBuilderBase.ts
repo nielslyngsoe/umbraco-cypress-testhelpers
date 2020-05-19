@@ -11,7 +11,7 @@ export class FormFieldBuilderBase {
   id: string;
   fieldTypeId;
   preValues = [];
-  settings: { DefaultValue: string };
+  settings?: { DefaultValue: string };
   invalidErrorMessage: string;
   containsSensitiveData: boolean;
   regex: string;

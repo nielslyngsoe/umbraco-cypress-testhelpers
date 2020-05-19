@@ -5,7 +5,7 @@ export class FormShortAnswerFieldBuilder extends FormFieldBuilderBase {
   removePrevalueEditor = true;
 
   withDefaultValue(defaultValue: string) {
-    if (this.settings != undefined) {
+    if (this.settings !== undefined) {
       this.settings.DefaultValue = defaultValue;
     } else {
       this.settings = { DefaultValue: defaultValue };
