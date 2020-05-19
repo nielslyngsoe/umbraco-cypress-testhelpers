@@ -6,34 +6,34 @@ import { FormFieldConditionBuilder } from './conditions/formFieldConditionBuilde
 export class FormFieldBuilderBase {
   parentBuilder;
 
-  alias;
-  caption;
-  id;
+  alias: string;
+  caption: string;
+  id: string;
   fieldTypeId;
   preValues = [];
   settings: { DefaultValue: string };
-  invalidErrorMessage;
-  containsSensitiveData;
-  regex;
-  mandatory;
+  invalidErrorMessage: string;
+  containsSensitiveData: boolean;
+  regex: string;
+  mandatory: boolean;
   requiredErrorMessage;
   removePrevalueEditor;
 
   formFieldConditionBuilder;
 
-  withCaption(caption) {
+  withCaption(caption: string) {
     this.caption = caption;
 
     return this;
   }
 
-  withId(id) {
+  withId(id: string) {
     this.id = id;
 
     return this;
   }
 
-  withMandatory(mandatory) {
+  withMandatory(mandatory: boolean) {
     this.mandatory = mandatory;
 
     return this;
@@ -45,24 +45,24 @@ export class FormFieldBuilderBase {
     return this;
   }
 
-  withValidationMessage(invalidErrorMessage) {
+  withValidationMessage(invalidErrorMessage: string) {
     this.invalidErrorMessage = invalidErrorMessage;
 
     return this;
   }
 
-  withValidationRegex(regex) {
+  withValidationRegex(regex: string) {
     this.regex = regex;
 
     return this;
   }
 
-  withAlias(alias) {
+  withAlias(alias: string) {
     this.alias = alias;
 
     return this;
   }
-  withSensitiveData(containsSensitiveData) {
+  withSensitiveData(containsSensitiveData: boolean) {
     this.containsSensitiveData = containsSensitiveData;
     return this;
   }

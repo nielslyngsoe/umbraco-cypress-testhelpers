@@ -5,8 +5,12 @@ export class FormShortAnswerFieldBuilder extends FormFieldBuilderBase {
   removePrevalueEditor = true;
 
   withDefaultValue(defaultValue: string) {
-    // tslint:disable-next-line: no-string-literal
-    this.settings['DefaultValue'] = defaultValue;
+    if (this.settings != undefined) {
+      this.settings.DefaultValue = defaultValue;
+    } else {
+      this.settings = { DefaultValue: defaultValue };
+    }
+
     return this;
   }
 
