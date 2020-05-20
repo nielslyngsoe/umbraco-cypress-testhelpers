@@ -38,9 +38,7 @@ export class Form {
     }\n
     <html>\n
       \t<head>\n
-      \t\t<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>\n
-      \t\t<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>\n
-      \t\t<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.1/jquery.validate.unobtrusive.min.js"></script>\n
+      \t\t@Html.RenderUmbracoFormDependencies()\n
       \t</head>\n
       \t<body>\n
       \t\t@Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.MyFormPicker.ToString(), FormTheme="", ExcludeScripts="0"})
@@ -89,6 +87,9 @@ export class Form {
         .withSensitiveData(shortAnswerField?.containsSensitiveData)
         .withMandatory(shortAnswerField?.mandatory)
         .withValidationRegex(shortAnswerField?.regex)
+        .withDefaultValue(shortAnswerField?.value)
+        .withRequiredErrorMessage(shortAnswerField?.requiredErrorMessage)
+        .withValidationMessage(shortAnswerField?.invalidErrorMessage)
         .done();
     });
     model.longAnswerFields?.forEach((longAnswerField) => {
@@ -100,6 +101,9 @@ export class Form {
         .withSensitiveData(longAnswerField?.containsSensitiveData)
         .withMandatory(longAnswerField?.mandatory)
         .withValidationRegex(longAnswerField?.regex)
+        .withDefaultValue(longAnswerField?.value)
+        .withRequiredErrorMessage(longAnswerField?.requiredErrorMessage)
+        .withValidationMessage(longAnswerField?.invalidErrorMessage)
         .done();
     });
     model.passwordFields?.forEach((passwordField) => {
@@ -108,6 +112,8 @@ export class Form {
         .withId(passwordField.id)
         .withMandatory(passwordField?.mandatory)
         .withValidationRegex(passwordField?.regex)
+        .withRequiredErrorMessage(passwordField?.requiredErrorMessage)
+        .withValidationMessage(passwordField?.invalidErrorMessage)
         .done();
     });
     model.checkboxFields?.forEach((checkboxField) => {
@@ -116,6 +122,8 @@ export class Form {
         .withId(checkboxField.id)
         .withMandatory(checkboxField?.mandatory)
         .withValidationRegex(checkboxField?.regex)
+        .withRequiredErrorMessage(checkboxField?.requiredErrorMessage)
+        .withValidationMessage(checkboxField?.invalidErrorMessage)
         .done();
     });
     model.dateFields?.forEach((dateField) => {
@@ -124,6 +132,8 @@ export class Form {
         .withId(dateField.id)
         .withMandatory(dateField?.mandatory)
         .withValidationRegex(dateField?.regex)
+        .withRequiredErrorMessage(dateField?.requiredErrorMessage)
+        .withValidationMessage(dateField?.invalidErrorMessage)
         .done();
     });
     model.dropDownFields?.forEach((dropDownField) => {
@@ -137,6 +147,8 @@ export class Form {
         .withPrevalues(dropDownField.preValues)
         .withMandatory(dropDownField?.mandatory)
         .withValidationRegex(dropDownField?.regex)
+        .withRequiredErrorMessage(dropDownField?.requiredErrorMessage)
+        .withValidationMessage(dropDownField?.invalidErrorMessage)
         .done();
     });
     container.done().done().done();

@@ -12,11 +12,11 @@ export class FormFieldBuilderBase {
   fieldTypeId;
   preValues = [];
   settings?: { DefaultValue: string };
-  invalidErrorMessage: string;
-  containsSensitiveData: boolean;
-  regex: string;
-  mandatory: boolean;
-  requiredErrorMessage;
+  invalidErrorMessage?: string;
+  containsSensitiveData?: boolean;
+  regex?: string;
+  mandatory?: boolean;
+  requiredErrorMessage?: string;
   removePrevalueEditor;
 
   formFieldConditionBuilder;

@@ -10,9 +10,10 @@ export class DropDownField extends FormField {
     mandatory?: boolean,
     requiredErrorMessage?: string,
     regex?: string,
+    invalidErrorMessage?: string,
     public prevalueSourceId?: string,
     public preValues?: string[],
   ) {
-    super(id, containsSensitiveData, mandatory, requiredErrorMessage, regex);
+    super(id, containsSensitiveData, mandatory, requiredErrorMessage, regex, invalidErrorMessage);
   }
 }

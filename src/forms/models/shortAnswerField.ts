@@ -10,7 +10,8 @@ export class ShortAnswerField extends FormField {
     mandatory?: boolean,
     requiredErrorMessage?: string,
     regex?: string,
+    invalidErrorMessage?: string,
   ) {
-    super(id, containsSensitiveData, mandatory, requiredErrorMessage, regex);
+    super(id, containsSensitiveData, mandatory, requiredErrorMessage, regex, invalidErrorMessage);
   }
 }

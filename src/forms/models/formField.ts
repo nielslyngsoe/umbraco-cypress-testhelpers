@@ -5,5 +5,6 @@ export class FormField {
     public mandatory: boolean = false,
     public requiredErrorMessage: string = '',
     public regex: string = '',
+    public invalidErrorMessage: string = '',
   ) {}
 }
