@@ -33,6 +33,7 @@ export class Form {
     this.docTypeAlias,
   )}>\n
     @using Contentmodels = Umbraco.Web.Publishedmodels;\n
+    @using Umbraco.Forms.Mvc;\n
     @{\n
     \tLayout = null;\n
     }\n
